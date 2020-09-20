@@ -11,7 +11,7 @@ set :stage, :production
 set :rails_env, :production
 set :branch, "mysql_app"
 
-server "13.233.153.96", user: "ec2-user", roles: %w{app db web}
+server "13.233.153.96", user: "root", roles: %w{app db web}
 
 # role-based syntax
 # ==================
@@ -45,11 +45,11 @@ server "13.233.153.96", user: "ec2-user", roles: %w{app db web}
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+  set :ssh_options, {
+    keys: %w(/root/.ssh/id_rsa),
+    forward_agent: false,
+    auth_methods: %w(publickey password)
+  }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------

@@ -1,12 +1,24 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+ #config valid for current version and patch releases of Capistrano
+#lock "~> 3.14.1"
 
 set :application, "mysql_app"
-set :repo_url, "https://github.com/sankareswari92/mysql_app.git"
-set :use_sudo, true
+#set :git_http_username, 'sankareswari92'
+#set :git_http_password, 'Suganya@92'
+
+set :scm, "git"
+set :repo_url, "https://github.com/sankareswari92/mysql_app"
+#set :repository, "git://github.com:sankareswari92/mysql_app.git"
+set :ssh_options, { :forward_agent => true }
+#set :local_repository, "/mysql_app"
+#set :use_sudo, true
 set :passenger_restart_with_touch, true
 set :puma_threads,    [4, 16]
 set :ssh_options, { :forward_agent => true }
+set :branch, "master"
+
+
+
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
