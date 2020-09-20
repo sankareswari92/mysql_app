@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 20
+  username: admin
+  password: abc12345
+  host: aws-test-db.cusvaztgta1i.ap-south-1.rds.amazonaws.com
+
+development:
+  <<: *default
+  database: aws_sep
+
+test:
+  <<: *default
+  database: mysql_app_test
+
+production:
+  <<: *default
+  database: aws_sep
+  username: admin
+  password: abc12345
